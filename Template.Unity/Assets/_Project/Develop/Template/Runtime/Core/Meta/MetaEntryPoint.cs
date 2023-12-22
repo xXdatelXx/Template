@@ -1,4 +1,3 @@
-using Template.Tools.Unity;
 using VContainer.Unity;
 
 namespace Template.Runtime.Core
