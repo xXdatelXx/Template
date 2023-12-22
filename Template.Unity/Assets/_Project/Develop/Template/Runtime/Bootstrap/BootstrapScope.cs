@@ -8,7 +8,8 @@ namespace Template.Runtime.Bootstrap
     public sealed class BootstrapScope : LifetimeScope
     {
         [SerializeField] private UnityScene _entry;
-        
+        [SerializeField] private UnityScene _empty;
+
         protected override void Awake()
         {
             IsRoot = true;
@@ -18,7 +19,7 @@ namespace Template.Runtime.Bootstrap
 
         protected override void Configure(IContainerBuilder scope)
         {
-            scope.RegisterInstance(_entry);
+            scope.RegisterInstance(new UnitySceneWithMemoryAllocate(_entry, _empty)).AsImplementedInterfaces();
             scope.RegisterEntryPoint<BootstrapEntryPoint>();
         }
     }

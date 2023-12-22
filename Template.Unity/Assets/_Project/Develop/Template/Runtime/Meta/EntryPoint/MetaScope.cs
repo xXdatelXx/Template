@@ -5,8 +5,7 @@ namespace Template.Runtime.Meta
 {
     public sealed class MetaScope : LifetimeScope
     {
-        protected override void Configure(IContainerBuilder scope)
-        {
-        }
+        protected override void Configure(IContainerBuilder scope) =>
+            scope.RegisterEntryPoint<MetaEntryPoint>();
     }
 }
