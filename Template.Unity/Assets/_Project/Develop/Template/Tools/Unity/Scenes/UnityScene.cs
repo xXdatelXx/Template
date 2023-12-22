@@ -22,8 +22,7 @@ namespace Template.Tools.Unity
         #region Serialize
 
         public void OnAfterDeserialize()
-        {
-        }
+        { }
 
         public void OnBeforeSerialize()
         {

@@ -18,6 +18,7 @@ namespace Template.Tools.Unity
         public void Open()
         {
             Async().Forget();
+            return;
 
             async UniTaskVoid Async()
             {
