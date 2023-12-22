@@ -1,39 +1,46 @@
 using System;
 using System.Reflection;
 using UnityEditor;
-using static Template.Editor.WindowsCommandSettings;
 
 namespace Template.Editor
 {
-    internal static class Inspector
+    internal sealed class Inspector
     {
-        private static readonly Type Assembly =
-            typeof(UnityEditor.Editor).Assembly.GetType("UnityEditor.InspectorWindow");
+        private readonly Type _assembly;
+        private readonly EditorWindow _window;
 
-        private static readonly EditorWindow Window = EditorWindow.GetWindow(Assembly);
-
-        [MenuItem(MenuParentItem + " Lock inspector " + InspectorLockKey)]
-        private static void ToggleLockMode()
+        public Inspector(Type assembly, EditorWindow window)
         {
-            PropertyInfo property = Assembly.GetProperty("isLocked");
-            property.SetValue(Window, !(bool)property.GetValue(Window));
-
-            Window.Repaint();
+            _assembly = assembly;
+            _window = window;
         }
 
-        [MenuItem(MenuParentItem + " Toggle Inspector Mode " + InspectorDebugKey)]
-        private static void ToggleDebugMode()
+        public Inspector()
         {
-            FieldInfo field = Assembly.GetField("m_InspectorMode", BindingFlags.NonPublic | BindingFlags.Instance);
+            _assembly = typeof(UnityEditor.Editor).Assembly.GetType("UnityEditor.InspectorWindow");
+            _window = EditorWindow.GetWindow(_assembly);
+        }
 
-            InspectorMode mode = (InspectorMode)field.GetValue(Window) == InspectorMode.Normal
+        public void ToggleLockMode()
+        {
+            PropertyInfo property = _assembly.GetProperty("isLocked");
+            property.SetValue(_window, !(bool)property.GetValue(_window));
+
+            _window.Repaint();
+        }
+
+        public void ToggleDebugMode()
+        {
+            FieldInfo field = _assembly.GetField("m_InspectorMode", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            InspectorMode mode = (InspectorMode)field.GetValue(_window) == InspectorMode.Normal
                 ? InspectorMode.Debug
                 : InspectorMode.Normal;
 
-            MethodInfo toggle = Assembly.GetMethod("SetMode", BindingFlags.NonPublic | BindingFlags.Instance);
-            toggle.Invoke(Window, new object[] { mode });
+            MethodInfo toggle = _assembly.GetMethod("SetMode", BindingFlags.NonPublic | BindingFlags.Instance);
+            toggle.Invoke(_window, new object[] { mode });
 
-            Window.Repaint();
+            _window.Repaint();
         }
     }
 }

@@ -1,18 +1,21 @@
-using UnityEditor;
 using System;
 using System.Reflection;
-using static Template.Editor.WindowsCommandSettings;
 
 namespace Template.Editor
 {
-    internal static class Console
+    internal sealed class Console
     {
-        [MenuItem(MenuParentItem + " Clear Console " + ClearConsoleKey)]
-        static void Clear()
-        {
-            var logs = Type.GetType("UnityEditor.LogEntries, UnityEditor.dll");
-            MethodInfo method = logs.GetMethod("Clear", BindingFlags.Static | BindingFlags.Public);
+        private readonly Type _logs;
 
+        public Console(Type logs) =>
+            _logs = logs;
+
+        public Console() : this(Type.GetType("UnityEditor.LogEntries, UnityEditor.dll"))
+        { }
+
+        public void Clear()
+        {
+            MethodInfo method = _logs.GetMethod("Clear", BindingFlags.Static | BindingFlags.Public);
             method.Invoke(null, null);
         }
     }
