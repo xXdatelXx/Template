@@ -8,12 +8,10 @@ namespace Template.Runtime.Meta
     {
         public MetaEntryPoint(IScene scene)
         {
-            Debug.Log(scene.Name);
         }
 
         public void Start()
         {
-            Debug.Log("start");
         }
     }
 }
