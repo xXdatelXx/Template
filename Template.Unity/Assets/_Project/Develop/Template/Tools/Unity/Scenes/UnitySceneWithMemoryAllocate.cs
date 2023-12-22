@@ -13,8 +13,6 @@ namespace Template.Tools.Unity
             _empty = empty;
         }
 
-        public string Name => _origin.Name;
-
         public void Open()
         {
             Async().Forget();

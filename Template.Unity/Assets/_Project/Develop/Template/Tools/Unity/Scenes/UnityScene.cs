@@ -10,6 +10,7 @@ namespace Template.Tools.Unity
     {
 #if UNITY_EDITOR
         [SerializeField] private SceneAsset _asset;
+        [SerializeField] private bool _forBuild;
 #endif
 
         public UnityScene(string name) =>
@@ -28,14 +29,25 @@ namespace Template.Tools.Unity
         #region Serialize
 
         public void OnAfterDeserialize()
-        {
-        }
+        { }
 
         public void OnBeforeSerialize()
         {
 #if UNITY_EDITOR
             if (_asset != null)
                 Name = _asset.name;
+#endif
+        }
+
+        private void OnValidate()
+        {
+#if UNITY_EDITOR
+            if (!_forBuild)
+                return;
+
+            var build = new ScenesBuild();
+            if (!build.Exist(_asset))
+                build.Add(_asset);
 #endif
         }
 

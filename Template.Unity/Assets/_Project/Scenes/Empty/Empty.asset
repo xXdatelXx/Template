@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Empty
   m_EditorClassIdentifier: 
   _asset: {fileID: 102900000, guid: 24cf7bf65fb309d4d989f31cb31c4ee7, type: 3}
+  _forBuild: 1
   <Name>k__BackingField: Empty
