@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,13 +17,19 @@ namespace Template.Tools.Unity
 
         [field: SerializeField] public string Name { get; private set; }
 
-        public void Open() =>
+        public void Open()
+        {
+            if (SceneManager.GetActiveScene().name == Name)
+                throw new InvalidOperationException("Scene already opened");
+
             SceneManager.LoadScene(Name);
+        }
 
         #region Serialize
 
         public void OnAfterDeserialize()
-        { }
+        {
+        }
 
         public void OnBeforeSerialize()
         {
