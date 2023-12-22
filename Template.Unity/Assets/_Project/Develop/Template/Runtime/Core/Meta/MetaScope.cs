@@ -1,7 +1,7 @@
 using VContainer;
 using VContainer.Unity;
 
-namespace Template.Runtime.Meta
+namespace Template.Runtime.Core
 {
     public sealed class MetaScope : LifetimeScope
     {

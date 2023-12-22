@@ -1,7 +1,7 @@
 using VContainer;
 using VContainer.Unity;
 
-namespace Template.Runtime.Game
+namespace Template.Runtime.Core
 {
     public sealed class GameScope : LifetimeScope
     {

@@ -3,7 +3,7 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace Template.Runtime.Bootstrap
+namespace Template.Runtime.Core
 {
     public sealed class BootstrapScope : LifetimeScope
     {

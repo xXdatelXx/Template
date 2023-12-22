@@ -1,12 +1,11 @@
 using Template.Tools.Unity;
-using UnityEngine;
 using VContainer.Unity;
 
-namespace Template.Runtime.Meta
+namespace Template.Runtime.Core
 {
     public sealed class MetaEntryPoint : IStartable
     {
-        public MetaEntryPoint(IScene scene)
+        public MetaEntryPoint()
         {
         }
 

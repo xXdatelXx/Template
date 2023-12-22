@@ -1,6 +1,6 @@
 using VContainer.Unity;
 
-namespace Template.Runtime.Game
+namespace Template.Runtime.Core
 {
     public sealed class GameEntryPoint : IStartable
     {
