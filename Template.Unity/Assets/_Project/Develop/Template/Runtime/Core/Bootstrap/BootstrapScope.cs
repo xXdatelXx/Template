@@ -1,4 +1,5 @@
-using Template.Tools.Unity;
+using Template.Engine.Unity;
+using Template.Runtime.Tools;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -7,8 +8,7 @@ namespace Template.Runtime.Core
 {
     public sealed class BootstrapScope : LifetimeScope
     {
-        [SerializeField] private UnityScene _entry;
-        [SerializeField] private UnityScene _empty;
+        [SerializeField] private ScenesSet _scenes;
 
         protected override void Awake()
         {
@@ -19,8 +19,10 @@ namespace Template.Runtime.Core
 
         protected override void Configure(IContainerBuilder scope)
         {
-            scope.RegisterInstance(new UnitySceneWithMemoryAllocate(_entry, _empty)).AsImplementedInterfaces();
-            scope.RegisterEntryPoint<BootstrapEntryPoint>();
+            IScene meta = new UnitySceneWithMemoryAllocate(_scenes.Meta, _scenes.Empty);
+
+            scope.RegisterInstance(meta);
+            scope.RegisterEntryPoint<Bootstrap>();
         }
     }
 }

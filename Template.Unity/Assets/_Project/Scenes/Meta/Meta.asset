@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Meta
   m_EditorClassIdentifier: 
   _asset: {fileID: 102900000, guid: dadd7ad6ba7f13343b81293cf4197cfc, type: 3}
+  _forBuild: 1
   <Name>k__BackingField: Meta

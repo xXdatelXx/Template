@@ -1,13 +1,13 @@
-using Template.Tools.Unity;
+using Template.Engine.Unity;
 using VContainer.Unity;
 
 namespace Template.Runtime.Core
 {
-    public sealed class BootstrapEntryPoint : IStartable
+    public sealed class Bootstrap : IStartable
     {
         private readonly IScene _entry;
 
-        public BootstrapEntryPoint(IScene entry) => 
+        public Bootstrap(IScene entry) =>
             _entry = entry;
 
         public void Start()

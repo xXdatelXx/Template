@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/Bootstrap/Bootstrap.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/_Project/Scenes/Meta/Meta.unity
-    guid: dadd7ad6ba7f13343b81293cf4197cfc
-  - enabled: 1
     path: Assets/_Project/Scenes/Game/Game.unity
     guid: 0b0bce2ada8bbf94d8d251aa45c2819c
   - enabled: 1
     path: Assets/_Project/Scenes/Empty/Empty.unity
     guid: 24cf7bf65fb309d4d989f31cb31c4ee7
+  - enabled: 1
+    path: Assets/_Project/Scenes/Meta/Meta.unity
+    guid: dadd7ad6ba7f13343b81293cf4197cfc
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

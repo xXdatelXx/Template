@@ -6,6 +6,6 @@ namespace Template.Runtime.Core
     public sealed class GameScope : LifetimeScope
     {
         protected override void Configure(IContainerBuilder scope) =>
-            scope.RegisterEntryPoint<GameEntryPoint>();
+            scope.RegisterEntryPoint<Game>();
     }
 }

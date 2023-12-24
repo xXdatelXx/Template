@@ -2,9 +2,9 @@ using VContainer.Unity;
 
 namespace Template.Runtime.Core
 {
-    public sealed class GameEntryPoint : IStartable
+    public sealed class Game : IStartable
     {
-        public GameEntryPoint()
+        public Game()
         {
         }
 

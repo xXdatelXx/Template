@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Game
   m_EditorClassIdentifier: 
   _asset: {fileID: 102900000, guid: 0b0bce2ada8bbf94d8d251aa45c2819c, type: 3}
+  _forBuild: 1
   <Name>k__BackingField: Game

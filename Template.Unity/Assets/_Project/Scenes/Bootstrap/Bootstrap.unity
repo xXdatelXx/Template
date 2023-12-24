@@ -152,8 +152,7 @@ MonoBehaviour:
     TypeName: 
   autoRun: 1
   autoInjectGameObjects: []
-  _entry: {fileID: 11400000, guid: fd47ae2f7ab576f4da14f4b91543dda6, type: 2}
-  _empty: {fileID: 11400000, guid: 3d5afb4debefb8c48bf5779cd6ac7433, type: 2}
+  _scenes: {fileID: 11400000, guid: 5388b973af3b03b45adfd64e30f4effb, type: 2}
 --- !u!4 &1261072905
 Transform:
   m_ObjectHideFlags: 0
