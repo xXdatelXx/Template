@@ -23,6 +23,11 @@ namespace Template.Runtime.Core
 
             scope.RegisterInstance(meta);
             scope.RegisterEntryPoint<Bootstrap>();
+            scope.RegisterEntryPointExceptionHandler((e) =>
+            {
+                //
+                //
+            });
         }
     }
 }
