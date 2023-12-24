@@ -26,9 +26,9 @@ namespace Template.Engine.Unity
             SceneManager.LoadScene(Name);
         }
 
+#if UNITY_EDITOR
         private void OnValidate()
         {
-#if UNITY_EDITOR
             if (_asset == null)
                 return;
 
@@ -36,11 +36,14 @@ namespace Template.Engine.Unity
 
             var build = new ScenesBuild();
 
-            if (_forBuild && !build.Exist(_asset))
-                build.Add(_asset);
+            if (_forBuild)
+            {
+                if (!build.Exist(_asset))
+                    build.Add(_asset);
+            }
             else if (build.Exist(_asset))
                 build.Remove(_asset);
-#endif
         }
+#endif
     }
 }

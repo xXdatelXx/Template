@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace Template.Engine.Unity
 {
+#if UNITY_EDITOR
     public sealed class ScenesBuild : IScenesBuild
     {
         private readonly List<EditorBuildSettingsScene> _scenes;
@@ -40,4 +41,5 @@ namespace Template.Engine.Unity
             EditorBuildSettings.scenes = _scenes.ToArray();
         }
     }
+#endif
 }
