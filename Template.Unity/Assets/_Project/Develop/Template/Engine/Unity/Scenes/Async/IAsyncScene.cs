@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 
-namespace Template.Tools.Unity
+namespace Template.Engine.Unity
 {
     public interface IAsyncScene : IScene
     {

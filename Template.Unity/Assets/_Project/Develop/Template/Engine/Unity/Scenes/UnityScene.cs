@@ -3,10 +3,10 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Template.Tools.Unity
+namespace Template.Engine.Unity
 {
-    [CreateAssetMenu(menuName = nameof(UnityScene), fileName = nameof(UnityScene))]
-    public sealed class UnityScene : ScriptableObject, ISerializationCallbackReceiver, IScene
+    [CreateAssetMenu(menuName = "Template/Scenes/Scene", fileName = nameof(UnityScene))]
+    public sealed class UnityScene : ScriptableObject, IScene
     {
 #if UNITY_EDITOR
         [SerializeField] private SceneAsset _asset;
@@ -21,36 +21,26 @@ namespace Template.Tools.Unity
         public void Open()
         {
             if (SceneManager.GetActiveScene().name == Name)
-                throw new InvalidOperationException("Scene already opened");
+                throw new InvalidOperationException($"Scene {Name} already opened");
 
             SceneManager.LoadScene(Name);
-        }
-
-        #region Serialize
-
-        public void OnAfterDeserialize()
-        { }
-
-        public void OnBeforeSerialize()
-        {
-#if UNITY_EDITOR
-            if (_asset != null)
-                Name = _asset.name;
-#endif
         }
 
         private void OnValidate()
         {
 #if UNITY_EDITOR
-            if (!_forBuild)
+            if (_asset == null)
                 return;
 
+            Name = _asset.name;
+
             var build = new ScenesBuild();
-            if (!build.Exist(_asset))
+
+            if (_forBuild && !build.Exist(_asset))
                 build.Add(_asset);
+            else if (build.Exist(_asset))
+                build.Remove(_asset);
 #endif
         }
-
-        #endregion
     }
 }

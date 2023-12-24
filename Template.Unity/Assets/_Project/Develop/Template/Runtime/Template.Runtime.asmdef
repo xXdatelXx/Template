@@ -1,10 +1,10 @@
 {
     "name": "Template.Runtime",
-    "rootNamespace": "",
+    "rootNamespace": "Template",
     "references": [
         "VContainer",
         "UniTask",
-        "Template.Tools"
+        "Template.Engine"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

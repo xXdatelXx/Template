@@ -1,6 +1,6 @@
 {
     "name": "Template.Editor",
-    "rootNamespace": "",
+    "rootNamespace": "Template",
     "references": [],
     "includePlatforms": [
         "Editor"

@@ -1,4 +1,4 @@
-namespace Template.Tools.Unity
+namespace Template.Engine.Unity
 {
     public interface IScene
     {

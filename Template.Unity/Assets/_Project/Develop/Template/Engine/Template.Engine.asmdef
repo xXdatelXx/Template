@@ -1,5 +1,6 @@
 {
-  "name": "Template.Tools",
+  "name": "Template.Engine",
+  "rootNamespace": "Template",
   "references": [
     "UniTask"
   ],
