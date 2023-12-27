@@ -6,6 +6,7 @@ namespace Template.Editor
     {
         private static readonly Console Console = new();
         private static readonly Inspector Inspector = new();
+        private static readonly Project Project = new();
 
         [MenuItem("Template/Console/Clear &q")]
         private static void ClearConsole() =>
@@ -18,5 +19,9 @@ namespace Template.Editor
         [MenuItem("Template/Inspector/ToggleDebugMode &e")]
         private static void ToggleDebugMode() =>
             Inspector.ToggleDebugMode();
+
+        [MenuItem("Template/Project/SearchAllScenes &r")]
+        private static void SearchAllScenes() =>
+            Project.Filtrate("t:Scene");
     }
 }
