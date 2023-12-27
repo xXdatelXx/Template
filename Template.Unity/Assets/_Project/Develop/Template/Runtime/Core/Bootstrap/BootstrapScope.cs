@@ -1,3 +1,4 @@
+using Template.Engine.Exceptions;
 using Template.Engine.Unity;
 using Template.Runtime.Tools;
 using UnityEngine;
@@ -21,13 +22,12 @@ namespace Template.Runtime.Core
         {
             IScene meta = new UnitySceneWithMemoryAllocate(_scenes.Meta, _scenes.Empty);
 
+            IReport report = new UnityDiagnosticReport(new UserReportingScript());
+            IReport limitReport = new LimitReport(report, limit: 10, time: 60);
+
             scope.RegisterInstance(meta);
             scope.RegisterEntryPoint<Bootstrap>();
-            scope.RegisterEntryPointExceptionHandler((e) =>
-            {
-                //
-                //
-            });
+            scope.RegisterEntryPointExceptionHandler(e => limitReport.Send(e));
         }
     }
 }

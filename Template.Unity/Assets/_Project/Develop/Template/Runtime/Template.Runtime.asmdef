@@ -4,7 +4,9 @@
     "references": [
         "VContainer",
         "UniTask",
-        "Template.Engine"
+        "Template.Engine",
+        "Unity.UserReport",
+        "UserReporting"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
