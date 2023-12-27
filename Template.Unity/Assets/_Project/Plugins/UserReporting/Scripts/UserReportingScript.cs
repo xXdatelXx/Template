@@ -63,7 +63,7 @@ public class UserReportingScript : MonoBehaviour
     /// Gets or sets a value indicating whether the prefab is in silent mode. Silent mode does not show the user report form.
     /// </summary>
     [Tooltip("A value indicating whether the prefab is in silent mode. Silent mode does not show the user report form.")]
-    public bool IsInSilentMode;
+    public bool IsInSilentMode = true;
 
     /// <summary>
     /// Gets or sets a value indicating whether the user report client reports metrics about itself.
