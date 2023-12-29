@@ -10,6 +10,7 @@ namespace Template.Runtime.Core
     public sealed class BootstrapScope : LifetimeScope
     {
         [SerializeField] private ScenesSet _scenes;
+        [SerializeField] private UserReportingScript _userReport;
 
         protected override void Awake()
         {
@@ -22,12 +23,15 @@ namespace Template.Runtime.Core
         {
             IScene meta = new UnitySceneWithMemoryAllocate(_scenes.Meta, _scenes.Empty);
 
-            IReport report = new UnityDiagnosticReport(new UserReportingScript());
+            IReport report = new UnityDiagnosticReport(_userReport);
             IReport limitReport = new LimitReport(report, limit: 10, time: 60);
 
             scope.RegisterInstance(meta);
             scope.RegisterEntryPoint<Bootstrap>();
+            scope.RegisterInstance(limitReport);
+#if !UNITY_EDITOR
             scope.RegisterEntryPointExceptionHandler(e => limitReport.Send(e));
+#endif
         }
     }
 }
