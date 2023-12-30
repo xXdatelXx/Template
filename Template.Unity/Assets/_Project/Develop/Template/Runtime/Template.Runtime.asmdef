@@ -5,8 +5,8 @@
         "VContainer",
         "UniTask",
         "Template.Engine",
-        "Unity.UserReport",
-        "UserReporting"
+        "UserReporting",
+        "Balancy"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

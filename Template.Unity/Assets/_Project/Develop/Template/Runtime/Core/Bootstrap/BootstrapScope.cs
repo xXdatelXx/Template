@@ -1,3 +1,4 @@
+using Balancy;
 using Template.Engine.Exceptions;
 using Template.Engine.Unity;
 using Template.Runtime.Tools;
@@ -26,9 +27,17 @@ namespace Template.Runtime.Core
             IReport report = new UnityDiagnosticReport(_userReport);
             IReport limitReport = new LimitReport(report, limit: 10, time: 60);
 
+            var config = new Balancy.AppConfig
+            {
+                ApiGameId = "1fdcaaf2-a422-11ee-9aad-0260a0c170f4",
+                PublicKey = "YTk5Mzc0MzAyYWNlMzVjMDM1ZTI3OG",
+                Environment = Constants.Environment.Development,
+            };
+            Balancy.Main.Init(config);
+
             scope.RegisterInstance(meta);
-            scope.RegisterEntryPoint<Bootstrap>();
             scope.RegisterInstance(limitReport);
+            scope.RegisterEntryPoint<Bootstrap>();
 #if !UNITY_EDITOR
             scope.RegisterEntryPointExceptionHandler(e => limitReport.Send(e));
 #endif

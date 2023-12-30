@@ -15,7 +15,7 @@ namespace Balancy.Editor
 {
     public class PluginUtils
     {
-        private static string PLUGINS_LOCAL_FOLDER = "Assets/Balancy/";
+        private static string PLUGINS_LOCAL_FOLDER = "Assets/_Project/Plugins/Balancy/";
 #if BALANCY_CREATOR
         private static string PLUGINS_ADDRESS_LOCAL => "Assets/plugins.json";
         private static string PLUGINS_ADDRESS_LOCAL_READ => "/plugins.json";
@@ -41,32 +41,24 @@ namespace Balancy.Editor
 
         internal class EditorButton
         {
-            [JsonProperty("title")]
-            public string title;
+            [JsonProperty("title")] public string title;
 
-            [JsonProperty("url")]
-            public string Url;
+            [JsonProperty("url")] public string Url;
         }
 
         internal class EditorMessage
         {
-            [JsonProperty("text")]
-            public string Text;
+            [JsonProperty("text")] public string Text;
 
-            [JsonProperty("buttons")]
-            public EditorButton[] Buttons;
+            [JsonProperty("buttons")] public EditorButton[] Buttons;
 
-            [JsonProperty("min_version")]
-            private string _minVersionString;
+            [JsonProperty("min_version")] private string _minVersionString;
 
-            [JsonProperty("max_version")]
-            private string _maxVersionString;
+            [JsonProperty("max_version")] private string _maxVersionString;
 
-            [JsonIgnore]
-            private PluginVersion _minVersion;
+            [JsonIgnore] private PluginVersion _minVersion;
 
-            [JsonIgnore]
-            private PluginVersion _maxVersion;
+            [JsonIgnore] private PluginVersion _maxVersion;
 
             [JsonIgnore]
             public PluginVersion MinVersion
@@ -93,22 +85,16 @@ namespace Balancy.Editor
 
         internal class EditorInfo
         {
-            [JsonProperty("url")]
-            public string DownloadUrl;
+            [JsonProperty("url")] public string DownloadUrl;
 
-            [JsonProperty("version")]
-            private string _versionString;
+            [JsonProperty("version")] private string _versionString;
 
-            [JsonProperty("min_version")]
-            private string _minVersionString;
+            [JsonProperty("min_version")] private string _minVersionString;
 
-            [JsonProperty("message")]
-            public EditorMessage Message;
+            [JsonProperty("message")] public EditorMessage Message;
 
-            [JsonIgnore]
-            private PluginVersion _version;
-            [JsonIgnore]
-            private PluginVersion _minVersion;
+            [JsonIgnore] private PluginVersion _version;
+            [JsonIgnore] private PluginVersion _minVersion;
 
             [JsonIgnore]
             public PluginVersion Version
@@ -135,13 +121,10 @@ namespace Balancy.Editor
 
         public class PluginInfoBase
         {
-            [JsonProperty("name")]
-            public string Name;
-            [JsonProperty("version")]
-            private string versionString;
+            [JsonProperty("name")] public string Name;
+            [JsonProperty("version")] private string versionString;
 
-            [JsonIgnore]
-            private PluginVersion _version;
+            [JsonIgnore] private PluginVersion _version;
 
             [JsonIgnore]
             public PluginVersion Version
@@ -157,10 +140,8 @@ namespace Balancy.Editor
 
         internal class DownloadInfo
         {
-            [JsonProperty("url")]
-            public string Url;
-            [JsonProperty("file")]
-            public string File;
+            [JsonProperty("url")] public string Url;
+            [JsonProperty("file")] public string File;
         }
 
         public class PluginVersion
@@ -206,26 +187,17 @@ namespace Balancy.Editor
         internal class PluginInfo : PluginInfoBase
         {
 #pragma warning disable 649
-            [JsonProperty("description")]
-            public string Description;
-            [JsonProperty("can_be_removed")]
-            public bool CanBeRemoved;
-            [JsonProperty("download")]
-            private DownloadInfo[] Download;
-            [JsonProperty("defines")]
-            private string[] Defines;
-            [JsonProperty("dependencies")]
-            public PluginInfoBase[] Dependencies;
-            [JsonProperty("code")]
-            public string Code;
-            [JsonProperty("documentation")]
-            public string Documentation;
+            [JsonProperty("description")] public string Description;
+            [JsonProperty("can_be_removed")] public bool CanBeRemoved;
+            [JsonProperty("download")] private DownloadInfo[] Download;
+            [JsonProperty("defines")] private string[] Defines;
+            [JsonProperty("dependencies")] public PluginInfoBase[] Dependencies;
+            [JsonProperty("code")] public string Code;
+            [JsonProperty("documentation")] public string Documentation;
 #pragma warning restore 649
 
-            [JsonIgnore]
-            public bool Installing;
-            [JsonIgnore]
-            public float InstallProgress;
+            [JsonIgnore] public bool Installing;
+            [JsonIgnore] public float InstallProgress;
 
             public void RemovePlugin()
             {
@@ -271,7 +243,8 @@ namespace Balancy.Editor
                         }
                         catch (System.Exception e)
                         {
-                            Debug.LogErrorFormat("Could not add plugin define symbols for build group: {0}, {1}", group, e);
+                            Debug.LogErrorFormat("Could not add plugin define symbols for build group: {0}, {1}", group,
+                                e);
                         }
                     }
                 }
@@ -336,11 +309,9 @@ namespace Balancy.Editor
         internal class PluginsFile
         {
 #pragma warning disable 649
-            [JsonProperty("editor")]
-            public EditorInfo EditorInfo;
+            [JsonProperty("editor")] public EditorInfo EditorInfo;
 
-            [JsonProperty("plugins")]
-            public List<PluginInfo> Plugins;
+            [JsonProperty("plugins")] public List<PluginInfo> Plugins;
 #pragma warning restore 649
 
             public PluginInfo GetOrCreatePluginInfo(string name)
