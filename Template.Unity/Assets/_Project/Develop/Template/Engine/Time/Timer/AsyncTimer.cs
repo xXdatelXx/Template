@@ -17,6 +17,8 @@ namespace Template.Engine.Time
 
         private async UniTaskVoid PlayAsync()
         {
+            if (_time < 0)
+                throw new ArgumentOutOfRangeException($"Time:{_time}");
             if (Playing)
                 throw new InvalidOperationException("Timer already playing");
 

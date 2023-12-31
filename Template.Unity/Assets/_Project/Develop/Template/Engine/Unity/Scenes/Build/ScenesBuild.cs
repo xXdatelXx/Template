@@ -1,8 +1,8 @@
 #if UNITY_EDITOR
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
-using System.Collections.Generic;
 
 namespace Template.Engine.Unity
 {
@@ -16,8 +16,13 @@ namespace Template.Engine.Unity
         public ScenesBuild() : this(EditorBuildSettings.scenes.ToList())
         { }
 
-        public bool Exist(SceneAsset asset) =>
-            EditorBuildSettings.scenes.Any(s => s.path == AssetDatabase.GetAssetPath(asset));
+        public bool Exist(SceneAsset asset)
+        {
+            if (asset == null)
+                throw new ArgumentNullException(nameof(asset));
+
+            return EditorBuildSettings.scenes.Any(s => s.path == AssetDatabase.GetAssetPath(asset));
+        }
 
         public void Add(SceneAsset asset)
         {

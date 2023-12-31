@@ -1,4 +1,6 @@
+using System;
 using Cysharp.Threading.Tasks;
+using UnityEngine.SceneManagement;
 
 namespace Template.Engine.Unity
 {
@@ -15,6 +17,11 @@ namespace Template.Engine.Unity
 
         public void Open()
         {
+            if (_origin is null || _empty is null)
+                throw new NullReferenceException(nameof(Scene));
+            if (Equals(_origin, _empty))
+                throw new InvalidOperationException($"Scene {_origin} == {_empty}");
+
             Async().Forget();
             return;
 

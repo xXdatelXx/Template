@@ -1,3 +1,4 @@
+using System;
 using System.Reflection;
 using UnityEditor;
 
@@ -18,6 +19,9 @@ namespace Template.Editor
 
         public void Filtrate(string filter)
         {
+            if (string.IsNullOrEmpty(filter))
+                throw new ArgumentNullException(nameof(filter));
+            
             MethodInfo result = _window.GetType().GetMethod("SetSearch", new[] { typeof(string) });
             result.Invoke(_window, new object[] { filter });
         }

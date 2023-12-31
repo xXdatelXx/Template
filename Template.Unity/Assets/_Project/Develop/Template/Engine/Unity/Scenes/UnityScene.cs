@@ -20,6 +20,8 @@ namespace Template.Engine.Unity
 
         public void Open()
         {
+            if (name == null)
+                throw new NullReferenceException(nameof(name));
             if (SceneManager.GetActiveScene().name == Name)
                 throw new InvalidOperationException($"Scene {Name} already opened");
 
@@ -45,5 +47,13 @@ namespace Template.Engine.Unity
                 build.Remove(_asset);
         }
 #endif
+
+        public override bool Equals(object other)
+        {
+            if (other is UnityScene scene)
+                return Name == scene.name;
+
+            return base.Equals(other);
+        }
     }
 }
