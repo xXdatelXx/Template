@@ -62,7 +62,6 @@ using System.Reflection;
 using System.Runtime.Serialization;
 using System.Text;
 using Unity.Cloud.UserReporting.Plugin.SimpleJson.Reflection;
-
 #if !SIMPLE_JSON_NO_LINQ_EXPRESSION
 using System.Linq.Expressions;
 
