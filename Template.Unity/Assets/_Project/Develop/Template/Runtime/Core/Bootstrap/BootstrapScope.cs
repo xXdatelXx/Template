@@ -26,17 +26,19 @@ namespace Template.Runtime.Core
 
             IReport report = new UnityDiagnosticReport(_userReport);
             IReport limitReport = new LimitReport(report, limit: 10, time: 60);
+            IReport strictReport = new StrictReport(limitReport);
 
-            var config = new Balancy.AppConfig
+            //TODO: hide keys
+            Balancy.AppConfig config = new()
             {
                 ApiGameId = "1fdcaaf2-a422-11ee-9aad-0260a0c170f4",
                 PublicKey = "YTk5Mzc0MzAyYWNlMzVjMDM1ZTI3OG",
                 Environment = Constants.Environment.Development,
             };
-            Balancy.Main.Init(config);
 
             scope.RegisterInstance(meta);
-            scope.RegisterInstance(limitReport);
+            scope.RegisterInstance(strictReport);
+            scope.RegisterInstance(config);
             scope.RegisterEntryPoint<Bootstrap>();
 #if !UNITY_EDITOR
             scope.RegisterEntryPointExceptionHandler(e => limitReport.Send(e));
