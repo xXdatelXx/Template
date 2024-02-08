@@ -2,6 +2,9 @@ using UnityEditor;
 
 namespace Template.Editor
 {
+   /// <summary>
+   /// Helpful commands for quick navigation in the editor
+   /// </summary>
    internal static class WindowsCommands
    {
       private static readonly Console Console = new();

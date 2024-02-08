@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 namespace Template.Engine.Unity
 {
+   /// <summary>
+   /// Decorator for 100% unloading of all resources of the previous scene in empty scene
+   /// </summary>
    public sealed class UnitySceneWithMemoryAllocate : IScene
    {
       private readonly IScene _origin;
