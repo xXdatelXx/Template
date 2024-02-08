@@ -29,7 +29,7 @@ namespace Template.Engine.Unity
          if (Exist(asset))
             throw new InvalidOperationException($"Scene {asset.name} already exists in build set");
 
-         var scene = new EditorBuildSettingsScene(AssetDatabase.GetAssetPath(asset), true);
+         EditorBuildSettingsScene scene = new(AssetDatabase.GetAssetPath(asset), true);
          _scenes.Add(scene);
 
          EditorBuildSettings.scenes = _scenes.ToArray();

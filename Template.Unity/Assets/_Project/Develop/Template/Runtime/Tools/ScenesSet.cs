@@ -18,7 +18,7 @@ namespace Template.Runtime.Tools
       public void OnBeforeSerialize()
       {
          if (Meta is null || Game is null || Empty is null)
-            throw new NullReferenceException("Scene sets is not full");
+            throw new NullReferenceException("Scene set is not full");
       }
 
       public void OnAfterDeserialize()
