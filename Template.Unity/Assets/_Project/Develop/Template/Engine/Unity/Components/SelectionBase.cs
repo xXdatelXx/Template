@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Template.Engine.Unity
 {
-    [SelectionBase, DisallowMultipleComponent]
-    public sealed class SelectionBase : MonoBehaviour
-    { }
+   [SelectionBase, DisallowMultipleComponent]
+   public sealed class SelectionBase : MonoBehaviour
+   { }
 }

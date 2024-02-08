@@ -1,20 +1,20 @@
 {
-    "name": "Template.Runtime",
-    "rootNamespace": "Template",
-    "references": [
-        "VContainer",
-        "UniTask",
-        "Template.Engine",
-        "UserReporting",
-        "Balancy"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+  "name": "Template.Runtime",
+  "rootNamespace": "Template",
+  "references": [
+    "VContainer",
+    "UniTask",
+    "Template.Engine",
+    "UserReporting",
+    "Balancy"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }

@@ -1,17 +1,17 @@
 {
-    "name": "Template.Engine",
-    "rootNamespace": "Template",
-    "references": [
-        "UniTask",
-        "UserReporting"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+  "name": "Template.Engine",
+  "rootNamespace": "Template",
+  "references": [
+    "UniTask",
+    "UserReporting"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }
