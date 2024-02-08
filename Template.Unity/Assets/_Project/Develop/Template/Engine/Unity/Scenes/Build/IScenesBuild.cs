@@ -5,6 +5,7 @@ namespace Template.Engine.Unity
 {
    /// <summary>
    /// Add, Remove scenes in Build menu
+   /// Only for Editor
    /// </summary>
    public interface IScenesBuild
    {

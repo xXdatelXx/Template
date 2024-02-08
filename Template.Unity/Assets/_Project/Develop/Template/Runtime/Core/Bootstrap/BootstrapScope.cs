@@ -1,4 +1,3 @@
-using System;
 using Balancy;
 using Template.Engine.Exceptions;
 using Template.Engine.Unity;
@@ -26,13 +25,13 @@ namespace Template.Runtime.Core
          IScene meta = new UnitySceneWithMemoryAllocate(_scenes.Meta, _scenes.Empty);
 
          IReport report = new UnityDiagnosticReport(_userReport);
-         IReport limitReport = new LimitReport(report, 10, 60);
+         IReport limitReport = new LimitReport(report, limit: 10, time: 60);
          IReport strictReport = new StrictReport(limitReport);
 
-         AppConfig config = new()
+         Balancy.AppConfig config = new()
          {
-            ApiGameId = Environment.GetEnvironmentVariable("ONLINE_CONFIGS_ID"),
-            PublicKey = Environment.GetEnvironmentVariable("ONLINE_CONFIGS_PUBLIC_KEY"),
+            ApiGameId = "1fdcaaf2-a422-11ee-9aad-0260a0c170f4",
+            PublicKey = "YTk5Mzc0MzAyYWNlMzVjMDM1ZTI3OG",
             Environment = Constants.Environment.Development
          };
 

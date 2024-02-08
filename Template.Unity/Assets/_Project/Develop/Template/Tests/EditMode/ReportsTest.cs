@@ -11,7 +11,7 @@ namespace Template.Tests.EditMode
       [Test]
       public void LimitReportThrowsExceptionCorrectly()
       {
-         IReport report = new LimitReport(new EmptyReport(), 5, 10);
+         IReport report = new LimitReport(new EmptyReport(), limit: 5, time: 10);
 
          Assert.Throws<InvalidOperationException>(() =>
          {
@@ -23,7 +23,7 @@ namespace Template.Tests.EditMode
       [Test]
       public async Task LimitReportResettingWorkCorrectly()
       {
-         IReport report = new LimitReport(new EmptyReport(), 5, 1);
+         IReport report = new LimitReport(new EmptyReport(), limit: 5, time: 1);
          var timer = new AsyncTimer(0.5f);
 
          for (int i = 0; i <= 5; i++)
