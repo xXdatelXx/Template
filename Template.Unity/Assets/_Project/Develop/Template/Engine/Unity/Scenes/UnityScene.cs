@@ -36,8 +36,8 @@ namespace Template.Engine.Unity
 
          Name = _asset.name;
 
+         // Add or remove scene from SceneBuildSettings
          var build = new ScenesBuild();
-
          if (_forBuild)
          {
             if (!build.Exist(_asset))

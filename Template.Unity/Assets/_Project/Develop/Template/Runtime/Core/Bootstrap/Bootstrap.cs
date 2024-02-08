@@ -1,6 +1,7 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Template.Engine.Unity;
+using UnityEngine;
 using VContainer.Unity;
 
 namespace Template.Runtime.Core
@@ -25,7 +26,13 @@ namespace Template.Runtime.Core
       private async UniTask LoadConfigs(CancellationToken cancellation)
       {
          Balancy.Main.Init(_app);
-         await UniTask.WaitUntil(() => Balancy.Storage.Initialized, cancellationToken: cancellation);
+
+         // Connected to the internet
+         if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork)
+         {
+            // Wait until loading configs
+            await UniTask.WaitUntil(() => Balancy.Storage.Initialized, cancellationToken: cancellation);
+         }
       }
    }
 }

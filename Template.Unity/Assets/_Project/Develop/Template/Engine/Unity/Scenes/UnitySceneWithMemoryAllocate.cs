@@ -31,6 +31,8 @@ namespace Template.Engine.Unity
          async UniTaskVoid Async()
          {
             _empty.Open();
+
+            // Await for the next scene opening
             await UniTask.NextFrame();
             _origin.Open();
          }
