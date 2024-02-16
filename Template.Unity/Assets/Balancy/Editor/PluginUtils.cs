@@ -15,7 +15,7 @@ namespace Balancy.Editor
 {
     public class PluginUtils
     {
-        private static string PLUGINS_LOCAL_FOLDER = "Assets/_Project/Plugins/Balancy/";
+        private static string PLUGINS_LOCAL_FOLDER = "Assets/_Game/Plugins/Balancy/";
 #if BALANCY_CREATOR
         private static string PLUGINS_ADDRESS_LOCAL => "Assets/plugins.json";
         private static string PLUGINS_ADDRESS_LOCAL_READ => "/plugins.json";

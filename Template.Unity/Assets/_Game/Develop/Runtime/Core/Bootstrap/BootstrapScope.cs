@@ -28,6 +28,9 @@ namespace Template.Runtime.Core
          IReport limitReport = new LimitReport(report, limit: 10, time: 60);
          IReport strictReport = new StrictReport(limitReport);
 
+         IEntity entity = null;
+         entity.AddModule(strictReport);
+
          Balancy.AppConfig config = new()
          {
             ApiGameId = "1fdcaaf2-a422-11ee-9aad-0260a0c170f4",
