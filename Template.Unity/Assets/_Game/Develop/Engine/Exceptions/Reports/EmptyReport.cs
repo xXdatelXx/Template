@@ -5,7 +5,7 @@ namespace Template.Engine.Exceptions
 {
    public sealed class EmptyReport : IReport
    {
-      public void Send(Exception e) => 
+      public void Send(Exception e) =>
          Debug.Log(e);
    }
 }
