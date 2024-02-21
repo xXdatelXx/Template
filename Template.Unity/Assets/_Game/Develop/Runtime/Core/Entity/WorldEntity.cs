@@ -18,7 +18,6 @@ namespace Template.Runtime.Core
 
       private void Awake()
       {
-         IEntity a = null;
          if (_autoConstruct)
             Construct(default);
       }
