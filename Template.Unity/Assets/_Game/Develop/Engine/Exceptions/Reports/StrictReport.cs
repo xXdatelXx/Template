@@ -6,7 +6,7 @@ namespace Template.Engine.Exceptions
    {
       private readonly IReport _origin;
 
-      public StrictReport(IReport origin) => 
+      public StrictReport(IReport origin) =>
          _origin = origin;
 
       public void Send(Exception e)

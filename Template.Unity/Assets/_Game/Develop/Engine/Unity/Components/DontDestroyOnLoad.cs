@@ -5,7 +5,7 @@ namespace Template.Engine.Unity
    [DisallowMultipleComponent]
    public sealed class DontDestroyOnLoad : MonoBehaviour
    {
-      private void Awake() => 
+      private void Awake() =>
          DontDestroyOnLoad(this);
    }
 }

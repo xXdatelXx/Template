@@ -6,7 +6,7 @@ namespace Template.Engine.Exceptions
    {
       private readonly UserReportingScript _origin;
 
-      public UnityDiagnosticReport(UserReportingScript origin) => 
+      public UnityDiagnosticReport(UserReportingScript origin) =>
          _origin = origin;
 
       public void Send(Exception e)

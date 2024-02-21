@@ -11,7 +11,7 @@ namespace Template.Engine.Time
 
       public bool Playing { get; private set; }
 
-      public void Play() => 
+      public void Play() =>
          PlayAsync().Forget();
 
       private async UniTaskVoid PlayAsync()

@@ -40,7 +40,7 @@ namespace Template.Runtime.Core
          scope.RegisterInstance(config);
          scope.RegisterEntryPoint<Bootstrap>();
 #if !UNITY_EDITOR
-            scope.RegisterEntryPointExceptionHandler(e => limitReport.Send(e));
+         scope.RegisterEntryPointExceptionHandler(e => limitReport.Send(e));
 #endif
       }
    }
