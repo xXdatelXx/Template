@@ -7,6 +7,7 @@ Work in progress
 - [**Directory purpose**](Template.Documentation/DirectoryPurpose.md)
 - [**Plugins**](Template.Documentation/Plugins.md)
 - [**Scenes**](Template.Documentation/Scenes.md)
+- [**Bootstrap structure**](Template.Documentation/BootstrapStructure.md)
 
 ## `Communication`
 - **Telegram:** [@X_datel_X](https://t.me/X_datel_X) (preferably)

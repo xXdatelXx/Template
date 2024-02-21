@@ -2,10 +2,10 @@
 - **Template.Build** - builds folder
 - **Template.Documentation** - documentation
 - **Template.Unity** - unity project folder
-    - **Assets/_Project** - core project directory, then separete game from other plugins
+    - **Assets/_Game** - core project directory, then separete game from other plugins
         - **Art** - art department folder where you can collect all 3D models, sprites, animations, terrains, shaders, etc
         - **Scenes** - scenes set and their resources
-        - **Develop/Template** - code directory
+        - **Develop** - code directory
             - **Editor** - editor scripts that won't be included in the platform build
             - **Engine** - like toolkit with not gameplay code, Unity decorators and useful classes
             - **Runtime** - production code
