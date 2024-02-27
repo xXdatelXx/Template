@@ -1,6 +1,7 @@
 # Directory structure
 - **Template.Build** - builds folder
 - **Template.Documentation** - documentation
+- **Template.Rename** - project for rename template
 - **Template.Unity** - unity project folder
     - **Assets/_Game** - core project directory, then separete game from other plugins
         - **Art** - art department folder where you can collect all 3D models, sprites, animations, terrains, shaders, etc
