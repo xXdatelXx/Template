@@ -35,7 +35,7 @@ public sealed class Project(string[] directories, string oldName, string newName
 
    private void Rename(string directory)
    {
-      // Entry in all files of directory
+      // Find all files in directory
       foreach (string entry in Directory.GetFileSystemEntries(directory, "*", SearchOption.TopDirectoryOnly))
       {
          // Rename directories
