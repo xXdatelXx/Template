@@ -1,0 +1,6 @@
+C:\Users\Datell\Desktop\Template\Template.Rename\bin\Release\Template.Rename.exe
+C:\Users\Datell\Desktop\Template\Template.Rename\bin\Release\Template.Rename.pdb
+C:\Users\Datell\Desktop\Template\Template.Rename\obj\Release\Template.Rename.csproj.AssemblyReference.cache
+C:\Users\Datell\Desktop\Template\Template.Rename\obj\Release\Template.Rename.csproj.CoreCompileInputs.cache
+C:\Users\Datell\Desktop\Template\Template.Rename\obj\Release\Template.Rename.exe
+C:\Users\Datell\Desktop\Template\Template.Rename\obj\Release\Template.Rename.pdb
