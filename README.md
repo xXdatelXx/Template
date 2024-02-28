@@ -1,6 +1,9 @@
-# Unity third person samurai game
+# Unity project template
 
-Work in progress
+## `Template renaming`
+1. Rename [root directory](/)
+2. Start renaming [program](Template.Rename/bin/Release/Template.Rename.exe)
+3. Delete renaming program [directory](Template.Rename)
 
 ## `Documentation`
 - [**Code style**](Template.Documentation/CodeStyle.md)
