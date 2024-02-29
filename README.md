@@ -1,4 +1,4 @@
-  # Unity project template
+  # Unity universal project template
   
   ## `Installation`
   
