@@ -1,14 +1,18 @@
 # Unity project template
 
 ## `Installation`
-#### `1. Renaming`
-1. Rename [root directory](/)
-2. Start [program](Template.Rename/bin/Release/Template.Rename.exe) for renaming
-3. Delete renaming program [directory](Template.Rename)
-#### `2. Init online configs`
-1. [Create](https://balancy.dev/dashboard) new online config project 
-2. Sigin in Unity `Tools -> Balancy -> Config`
-3. Paste your credenitals in [Bootstrap](/Template.Unity/Assets/_Game/Develop/Runtime/Core/Scenes/Bootstrap/BootstrapScope.cs)
+
+#### `1. Clone repository`
+
+#### `2. Rename repository`
+- Rename [root directory](/)
+- Start [program](Template.Rename/bin/Release/Template.Rename.exe) for renaming
+- Delete renaming program [directory](Template.Rename)
+
+#### `3. Init online configs`
+- [Create](https://balancy.dev/dashboard) new online config project
+- Sigin in Unity `Tools -> Balancy -> Config`
+- Paste your credenitals in [Bootstrap](/Template.Unity/Assets/_Game/Develop/Runtime/Core/Scenes/Bootstrap/BootstrapScope.cs)
 
 ## `Documentation`
 - [**Code style**](Template.Documentation/CodeStyle.md)
