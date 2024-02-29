@@ -3,7 +3,7 @@
   ## `Installation`
   
   1. **Clone repository**
-  2. **Rename repository**
+  2. **Rename project**
       - Rename [root directory](/)
       - Start [program](Template.Rename/bin/Release/Template.Rename.exe) for renaming
       - Delete renaming program [directory](Template.Rename)
