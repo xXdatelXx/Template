@@ -30,8 +30,8 @@ namespace Template.Runtime.Core
 
          Balancy.AppConfig config = new()
          {
-            ApiGameId = "1fdcaaf2-a422-11ee-9aad-0260a0c170f4",
-            PublicKey = "YTk5Mzc0MzAyYWNlMzVjMDM1ZTI3OG",
+            ApiGameId = "[Your id]",
+            PublicKey = "[Your key]",
             Environment = Constants.Environment.Development
          };
 
