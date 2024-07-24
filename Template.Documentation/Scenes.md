@@ -10,7 +10,7 @@
 ### Initilization
 - *Scene name* + Scope - for scene [RRR phase](https://blog.ploeh.dk/2010/09/29/TheRegisterResolveReleasepattern/), with using [VContainer](/Template.Documentation/Core/Plugins.md)
 - *Scene name* - for scene initilization phase
-- [Example](/Template.Unity/Assets/_Game/Develop/Runtime/Core/Bootstrap)
+- [Example](/Template.Unity/Assets/_Game/Develop/Runtime/Core/Scenes/Bootstrap)
 ### Classes
 - [IScene](/Template.Unity/Assets/_Game/Develop/Engine/Unity/Scenes/IScene.cs) - decorator for Unity scene asset
     - [UnityScene](/Template.Unity/Assets/_Game/Develop/Engine/Unity/Scenes/UnityScene.cs) - Scene SO
